@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Location</title>
+    <header>
+        <nav class="navbar navbar-light bg-primary">
+            <div class="container-fluid">
+                <h1>Angular CRUD</h1>
+                <div class="d-flex">
+                    <button (click)="clickAddLocation()" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-success">Add Employee</button>
+                </div>
+            </div>
+        </nav>
+        <table class="table mt-3">
+            <thead>
+                <tr>
+                    <th scope="col">Location ID</th>
+                    <th scope="col">Location Name</th>
+                </thead>
+                    <tbody>
+                        <tr *ngFor="let row of locationData">
+                            <td>{{row.id}}</td>
+                            <td>{{row.locationName}}</td>
+                            
+                            <td>
+                                <button (click)="onEdit(row)" style="color: aliceblue;" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-info">Edit</button>
+                                <button (click)="deleteLocation(row)" class="btn btn-danger mx-3">Delete</button>
+                            </td>
+                        </tr>
+                    </tbody>
+           
+        </table>
+    </header>
+</head>
+<body>
+    <form [formGroup]="formValue">
+    <div>
+    <label>Add Location</label>
+    <input type="text" placeholder="Add a location" name="location"/>
+    <button class="btns" name=""></button> 
+    <ul>
+        <li *ngFor="let item of location">[(item.location)] having location [(item.id)]</li>
+    </ul>
+    <!-- <button type="submit" mat-raised-button color="primary" (click)="location()">Add Location</button>
+     -->
+    <!-- <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Salary</label>
+        <input type="text" formControlName="salary" class="form-control" id="exampleInputPassword1" placeholder="Salary">
+      </div>
+   -->
+</div>
+<div class="modal-footer">
+<!-- <button type="button" id="cancel" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> -->
+<button type="button" *ngIf="showAdd" (click)="postLocationDetails()" class="btn btn-primary">Add</button>
+<button type="button" *ngIf="showUpdate" (click)="updateLocationDetails()" class="btn btn-primary">Update</button>
+</div>
+</form>
+</body>
+</html>

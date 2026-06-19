@@ -1,0 +1,15 @@
+.dashwrapper{
+    display:flex;
+    flex-direction: column;
+}
+
+
+
+li{
+    border: 1px solid gray;
+    padding: 10px;
+    margin:5px;
+}
+.logoutButton{
+    margin: 10px;
+}

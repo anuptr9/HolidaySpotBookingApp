@@ -1,0 +1,27 @@
+<div class="wrapper">
+
+    <div class="block">
+
+        <div style="text-align:center">
+        <h1>{{message}}</h1>
+        </div>
+        <form [formGroup]="register()">
+            <h2>Register</h2>
+            
+               
+            <label for="name">UserName</label>
+            <input type="text" placeholder="Enter your name" class="inp" formControlName="name"/>
+            <label for="password">Password</label>
+            <input type="text" placeholder="Enter your password" class="inp" formControlName="password"/>
+            <label for="email">Email</label>
+            <input type="text"  placeholder="Enter your Email" class="inp" formControlName="email"/>
+          
+            <div class="btns">
+                    <button (click)="registerSubmit(register.value)" >SignUp</button>
+                    <button (click)="gotToLogin()">Login</button>
+                </div>
+            <router-outlet></router-outlet>
+            <app-login></app-login>
+        </form>
+    </div>
+</div>
