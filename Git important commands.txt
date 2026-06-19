@@ -1,0 +1,63 @@
+To build the code in Intellij
+mvn clean install -DskipTests   --> to build the code without test cases
+mvn clean install ---> to build the code with test cases
+if there are errors then check and fix errors
+
+To build a specific pacakge in maven run command-
+mvn clean install -pl (package name)
+For eg-
+mvn clean install -pl pricing-external
+
+To remove the files which got added by IDE in github after performing the push in repo- 
+git rm --cached '*.iml'   // to remove ide generated files after push the code in PR  
+git rm -r --cached .idea  // to remove ide generated files after push the code in PR 
+
+
+How to clone the particular branch-
+git clone --branch <branch_name> --single-branch <repository_url>  // to clone the merge branched wih URL
+For Eg- git clone --branch Pricing-shared-xmlRelated --single-branch https://github.disney.com/WDPR-SPS/pricing-shared.git
+
+General Git commands
+git clone [repoURL] (copy & paste the repo URL)   	-->  to clone the repo from the Github wih its URL
+git checkout -b [branchName]  						-->  to create a new branch and switch to it
+													For ex.
+													git checkout -b feature/add-login 
+													
+git add [filePath]									-->  to add a specific modified file by putting its file name with path showing in gitbash/
+															For eg.Syntax--> git add Docker, 
+															here Docker is the name of the file which is in staged section and needs to be pushed showing in git.
+															
+git add .  											--> to add all files which you modified
+git commit -m "Put some Description about the files you are adding in this commit to repo"  --. to add files to tracked areas which can be pushed to github
+git push origin [branchName] --> to push the committed fles to repo 
+git branch --> to check branch name which are created 
+git status --> to check status 
+git pull origin --> to check that current branch is up to date with master branch. Also this command is used in Git to update your local repository with changes from a remote repository 
+
+
+
+Steps To create a Pull Request-
+
+Step 1- git clone [repository_url]
+
+Step 2- git checkout -b [your_branch_name]
+
+Step 3- git add .
+
+Step 4- git commit -m "Descriptive commit message"
+	
+Step 5- git push origin [your_branch_name]
+
+Step 6- Navigate to GitHub and add in Asignee section to get approval and then click on Create Pull Request:
+Go to your repository on GitHub.
+You should see a banner indicating recent pushes to your branch, with a "Compare & pull request" button. Click this button.
+Alternatively, navigate to the "Pull requests" tab and click "New pull request".
+
+Step 7- Configure the Pull Request:
+Base Branch: Select the branch in the target repository where you want your changes to be merged (e.g., main or develop).
+Compare Branch: Select the branch from your source repository (your fork or the original repository) that contains your changes.
+Title and Description: Provide a clear and concise title for your pull request and a detailed description explaining the changes and their purpose.
+
+Step 8- Submit the Pull Request:
+Click "Create pull request" to submit it for review.
+Alternatively, you can choose "Create Draft Pull Request" if your changes are not yet ready for a final review.	
